@@ -36,7 +36,8 @@ import {
     linkedin,
     facebook,
     twitter,
-    mail
+    mail,
+    fashow
 
   } from "../assets";
   
@@ -317,7 +318,7 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: af,
+      image: fashow,
       source_code_link: "https://github.com/GamithaManawadu/fashow-front",
     },
 
