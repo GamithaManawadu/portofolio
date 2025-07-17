@@ -30,6 +30,7 @@ import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 import mahinda from "./company/mahinda.png";
 import sliit from "./company/sliit.png";
+import visiro from "./company/visiro.jpeg";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -72,6 +73,7 @@ export {
   meta,
   shopify,
   starbucks,
+  visiro,
   tesla,
   carrent,
   jobit,
