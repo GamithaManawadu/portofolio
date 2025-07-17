@@ -48,7 +48,7 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        Software Engineering graduate with strong technical skills anchored on extensive engineering coursework and a special focus on Front-end Development, Web development and Data Analysis.
+        Software Engineering graduate with strong technical skills anchored on extensive engineering coursework and a special focus on .Net based SaaS appliactions.
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10'>

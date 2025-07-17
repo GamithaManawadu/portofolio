@@ -17,6 +17,7 @@ import {
     docker,
     meta,
     starbucks,
+    visiro,
     tesla,
     shopify,
     mahinda,
@@ -185,7 +186,7 @@ import {
       company_name: "Flintec Transducers",
       icon: starbucks,
       iconBg: "#E6DEDD",
-      date: "December 2021 - October 2022",
+      date: "December 2020 - December 2021",
       points: [
         "Developing and maintaining dekstop and web applications using C# .NET and other related technologies.",
         "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -193,19 +194,20 @@ import {
         "Participating in code reviews and providing constructive feedback to other developers.",
       ],
     },
-  /*  {
-      title: "Full stack Developer",
-      company_name: "Meta",
-      icon: meta,
+    {
+      title: "Software Engineer",
+      company_name: "Visiro Global Solutions",
+      icon: visiro,
       iconBg: "#E6DEDD",
-      date: "Jan 2023 - Present",
+      date: "December 2021 - February 2025",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Led software development projects while contributing hands-on as a full-stack engineer, focusing on Saas based ERP system development and integration within Agile teams.",
+        "Designed and developed ERP modules (HR, finance, inventory) using C#, ASP.NET MVC, Entity Framework, and SQL Server.",
+        "Built and integrated REST APIs and front-end components using JavaScript, HTML, CSS, and jQuery.",
+        "Maintained code quality with Git, supported testing, and contributed to deployment processes via Azure DevOps.",
+        "Collaborated with analysts, QA, and clients to ensure technical solutions met business needs.",
       ],
-    },*/
+    },
   ];
   
   const testimonials = [
