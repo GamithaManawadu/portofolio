@@ -1,8 +1,54 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,300;1,400&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ── Dark theme (default) ── */
+:root, html.dark {
+  --color-primary:   #050816;
+  --color-secondary: #aaa6c3;
+  --color-tertiary:  #151030;
+  --color-black-100: #100d25;
+  --color-black-200: #090325;
+  --color-white-100: #f3f3f3;
+  color-scheme: dark;
+}
+
+/* ── Light theme ── */
+html.light {
+  --color-primary:   #faf7f2;
+  --color-secondary: #5a4a3a;
+  --color-tertiary:  #f0ebe0;
+  --color-black-100: #e8e0d0;
+  --color-black-200: #ddd4c0;
+  --color-white-100: #1a1008;
+  color-scheme: light;
+}
+
+/* Navbar bg + separator in light mode */
+html.light nav {
+ /* background-color: #faf7f2 !important; 
+  border-bottom: 1px solid #d8cfc0;*/
+}
+
+/* Hide dark hero background pattern in light mode */
+html.light .bg-hero-pattern {
+  background-image: none;
+}
+
+/* Service / project cards */
+html.light .bg-tertiary { background-color: #c8d0ea !important; }
+html.light .bg-black-100 { background-color: #b8c2e0 !important; }
+
+/* Contact form inputs */
+html.light input, html.light textarea {
+  color: #0d0d1a !important;
+}
+html.light input::placeholder, html.light textarea::placeholder {
+  color: #4a4a7a !important;
+}
 
 * {
   margin: 0;
@@ -10,7 +56,10 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
-  color-scheme: dark;
+}
+
+html, body {
+  overflow-x: hidden;
 }
 
 .hash-span {
@@ -34,13 +83,9 @@
 }
 
 .violet-gradient {
-  background: #804dee;
-  background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
-  background: -webkit-linear-gradient(
-    -90deg,
-    #804dee 0%,
-    rgba(60, 51, 80, 0) 100%
-  );
+  background: var(--color-secondary);
+  background: linear-gradient(-90deg, var(--color-secondary) 0%, rgba(0,0,0,0) 100%);
+  background: -webkit-linear-gradient(-90deg, var(--color-secondary) 0%, rgba(0,0,0,0) 100%);
 }
 
 .green-pink-gradient {

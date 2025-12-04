@@ -1,30 +1,31 @@
-import {BrowserRouter} from 'react-router-dom';
-import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, Footer } from './components';
-
+import { BrowserRouter } from 'react-router-dom';
+import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, Publication, StarsCanvas, Footer } from './components';
+import { ThemeProvider, useTheme } from './context/ThemeContext';
 
 const App = () => {
-  
   return (
-    <BrowserRouter>
-    <div classname="relative z-0 bg-primary">
-      <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
-      <Navbar />
-      
-      <Hero />
-      </div>
-      <About />
-      <Experience />
-      <Tech />
-      <Works />
-      <div className='relative z-0'>
-        <Contact />
-      <Footer />
-        
-        <StarsCanvas />
-      </div>
-    </div>
-    </BrowserRouter>
-  )
-}
+    <ThemeProvider>
+      <BrowserRouter>
+        <div className="relative z-0 bg-primary transition-colors duration-300 overflow-x-hidden">
+          <div>
+            <Navbar />
+            <Hero />
+          </div>
+          <About />
+          <Works />
+          <Publication />
+          <Experience />
+          <Tech />
+          
+          <div className='relative z-0'>
+            <Contact />
+            <Footer />
+            <StarsCanvas />
+          </div>
+        </div>
+      </BrowserRouter>
+    </ThemeProvider>
+  );
+};
 
-export default App
+export default App;

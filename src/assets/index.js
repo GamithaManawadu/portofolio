@@ -40,6 +40,13 @@ import netflix from "./netflix.png";
 import ssd from "./ssd.png";
 import af from "./home.png";
 import csse from "./csse.png";
+import mlflow_churn from "./mlflow_dashboard.png";
+import ragml from "./rag-ml.png";
+import yolo from "./yolo_object.png";
+import xray from "./x-ray-classification.png";
+import kaggle_house from "./rankings.png";
+import sentiment from "./sentiment.png"
+import profile from "./profile.jpg";
 
 import linkedin from "./linkedin.png";
 import git1 from "./git1.png";
@@ -86,11 +93,18 @@ export {
   fashow,
   netflix,
   ssd,
+  mlflow_churn,
+  ragml,
   af,
   csse,
   linkedin,
   git1,
   facebook,
   twitter,
-  mail
+  mail,
+  yolo,
+  xray,
+  kaggle_house,
+  sentiment,
+  profile
 };
