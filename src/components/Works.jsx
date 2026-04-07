@@ -1,9 +1,6 @@
-import React from "react";
 import { motion } from "framer-motion";
-
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
-import { fadeIn } from "../utils/motion";
 import { useTheme } from "../context/ThemeContext";
 
 const GitHubIcon = () => (
@@ -12,21 +9,17 @@ const GitHubIcon = () => (
   </svg>
 );
 
-const ProjectCard = ({ index, name, description, tags, image, source_code_link, isDark }) => {
-  const cardBg      = isDark ? "bg-tertiary border-[#2a2a4a]" : "bg-[#f0ebe0] border-[#d8d0c0]";
-  const titleColor  = isDark ? "text-white" : "text-[#1a1008]";
-  const bodyColor   = isDark ? "text-[#aaa6c3]" : "text-[#5a4a3a]";
-  const tagBg       = isDark ? "bg-[#1a1836] text-[#aaa6c3]" : "bg-[#e0d8c8] text-[#5a4a3a]";
-  const btnColor    = isDark
+const ProjectCard = ({ name, description, tags, image, source_code_link, isDark }) => {
+  const cardBg    = isDark ? "bg-tertiary border-[#2a2a4a]" : "bg-[#f0ebe0] border-[#d8d0c0]";
+  const titleColor = isDark ? "text-white" : "text-[#1a1008]";
+  const bodyColor  = isDark ? "text-[#aaa6c3]" : "text-[#5a4a3a]";
+  const tagBg      = isDark ? "bg-[#1a1836] text-[#aaa6c3]" : "bg-[#e0d8c8] text-[#5a4a3a]";
+  const btnColor   = isDark
     ? "border border-[#aaa6c3] text-[#aaa6c3] hover:bg-[#aaa6c3]/10"
     : "border border-[#5a4a3a] text-[#5a4a3a] hover:bg-[#5a4a3a]/10";
 
   return (
-    <motion.div
-      variants={fadeIn("up", "spring", index * 0.15, 0.6)}
-      className={`border ${cardBg} rounded-2xl overflow-hidden transition-colors duration-300 flex flex-col`}
-    >
-      {/* Full-width image */}
+    <div className={`border ${cardBg} rounded-2xl overflow-hidden transition-colors duration-300 flex flex-col`}>
       <div
         className="w-full h-[220px] overflow-hidden cursor-pointer"
         onClick={() => window.open(source_code_link, "_blank")}
@@ -38,26 +31,19 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
         />
       </div>
 
-      {/* Card body */}
       <div className="p-6 flex flex-col flex-1 gap-4">
-
-        {/* Title */}
         <h3
           className={`text-[20px] font-semibold leading-snug ${titleColor}`}
           style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
         >
           {name}
         </h3>
-
-        {/* Description */}
         <p
           className={`text-[13px] leading-[1.75] flex-1 ${bodyColor}`}
           style={{ fontFamily: "'Poppins', sans-serif" }}
         >
           {description}
         </p>
-
-        {/* Tags */}
         <div className="flex flex-wrap gap-2">
           {tags.map((tag) => (
             <span
@@ -69,8 +55,6 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
             </span>
           ))}
         </div>
-
-        {/* GitHub button */}
         <button
           onClick={() => window.open(source_code_link, "_blank")}
           className={`mt-1 flex items-center justify-center gap-2 w-full px-4 py-2 rounded-full text-[13px] font-medium transition-colors duration-200 ${btnColor}`}
@@ -79,37 +63,43 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
           <GitHubIcon />
           Code
         </button>
-
       </div>
-    </motion.div>
+    </div>
   );
 };
 
 const Works = () => {
   const { isDark } = useTheme();
+  const labelColor   = isDark ? "text-[#aaa6c3]" : "text-[#8a7a6a]";
   const headingColor = isDark ? "text-white" : "text-[#1a1008]";
   const bodyColor    = isDark ? "text-[#aaa6c3]" : "text-[#5a4a3a]";
-  const labelColor   = isDark ? "text-[#aaa6c3]" : "text-[#8a7a6a]";
 
   return (
     <div className="w-full max-w-7xl mx-auto py-4 px-6 sm:px-16">
 
       <motion.p
-        variants={fadeIn("", "", 0.1, 0.6)}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.5 }}
         className={`text-[12px] tracking-[0.2em] uppercase mb-6 ${labelColor}`}
         style={{ fontFamily: "'Poppins', sans-serif" }}
       >
         Selected Projects
       </motion.p>
 
+      
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project, index) => (
-          <ProjectCard
+          <motion.div
             key={`project-${index}`}
-            index={index}
-            isDark={isDark}
-            {...project}
-          />
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.5, delay: index * 0.08 }}
+          >
+            <ProjectCard isDark={isDark} {...project} />
+          </motion.div>
         ))}
       </div>
     </div>

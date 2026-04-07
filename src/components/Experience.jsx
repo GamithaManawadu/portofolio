@@ -72,14 +72,12 @@ const Experience = () => {
     <div className="w-full max-w-7xl mx-auto py-4 px-6 sm:px-16">
 
       {/* Work Experience */}
-      <motion.p
-        variants={fadeIn("", "", 0.1, 0.6)}
+      <p
         className={`text-[12px] tracking-[0.2em] uppercase mb-4 ${labelColor}`}
         style={{ fontFamily: "'Poppins', sans-serif" }}
       >
         Work Experience
-      </motion.p>
-
+      </p>
       
       <VerticalTimeline>
         {workExp.map((experience, index) => (
@@ -88,21 +86,18 @@ const Experience = () => {
       </VerticalTimeline>
 
       {/* Education */}
-      <motion.p
-        variants={fadeIn("", "", 0.2, 0.6)}
+      <p
         className={`text-[12px] tracking-[0.2em] uppercase mt-20 mb-4 ${labelColor}`}
         style={{ fontFamily: "'Poppins', sans-serif" }}
       >
         Education
-      </motion.p>
-
-      <motion.h2
-        variants={fadeIn("", "", 0.25, 0.6)}
+      </p>
+      <h2
         className={`text-[28px] sm:text-[32px] font-normal mb-10 ${headingColor}`}
         style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
       >
         Academic background
-      </motion.h2>
+      </h2>
 
       <VerticalTimeline>
         {eduExp.map((experience, index) => (
