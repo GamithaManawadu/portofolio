@@ -92,14 +92,14 @@ const Publication = () => {
           variants={fadeIn("up", "spring", 0.4, 0.7)}
           className={`border ${cardBg} rounded-2xl overflow-hidden transition-colors duration-300`}
         >
-          <video
-            className="w-full max-h-[500px] object-contain"
-            controls
-            preload="metadata"
-          >
-            <source src="/research_video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
+            <iframe
+              src="https://drive.google.com/file/d/1a1StFp-jtjLMLK2G2BUmt5IClRNRotm9/preview"
+              className="absolute inset-0 w-full h-full"
+              allow="autoplay"
+              allowFullScreen
+            />
+          </div>
         </motion.div>
 
       </div>
