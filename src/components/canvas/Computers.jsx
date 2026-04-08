@@ -8,8 +8,8 @@ import CanvasLoader from "../Loader";
 const Computers = ({ isMobile }) => {
   const computer = useGLTF("./workbench/scene.gltf");
   const { isDark } = useTheme();
-  const scale = isMobile ? 4.5 : 3.5;
-  const position = isMobile ? [0, -3, -2.2] : [0, -4.25, 2.0];
+  const scale = isMobile ? 6.0 : 3.5;
+  const position = isMobile ? [0, -6, -2.2] : [0, -4.25, 2.0];
 
   useEffect(() => {
     computer.scene.traverse((child) => {

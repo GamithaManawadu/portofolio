@@ -208,17 +208,17 @@ const Hero = () => {
 
       {/* Mobile */}
       <div className='relative z-10 sm:hidden flex flex-col w-full'>
-        <div className={`pt-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}>
+        <div className={`pt-[90px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}>
           <div className='flex flex-col justify-center items-center mt-5'>
             <div className='w-5 h-5 rounded-full bg-secondary' />
-            <div className='w-1 h-40 violet-gradient' />
+            <div className='w-1 h-32 violet-gradient' />
           </div>
           <TextBlock />
         </div>
-        <div className='w-full h-[500px]'>
+        <div className='w-full h-[320px]'>
           <ComputersCanvas />
         </div>
-        <div className='w-full flex justify-center items-center py-6'>
+        <div className='w-full flex justify-center items-center py-4'>
           <ScrollArrow />
         </div>
       </div>
