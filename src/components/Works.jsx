@@ -19,7 +19,7 @@ const ProjectCard = ({ name, description, tags, image, source_code_link, isDark 
     : "border border-[#5a4a3a] text-[#5a4a3a] hover:bg-[#5a4a3a]/10";
 
   return (
-    <div className={`border ${cardBg} rounded-2xl overflow-hidden transition-colors duration-300 flex flex-col`}>
+    <div className={`border ${cardBg} rounded-2xl overflow-hidden transition-colors duration-300 flex flex-col h-full`}>
       <div
         className="w-full h-[220px] overflow-hidden cursor-pointer"
         onClick={() => window.open(source_code_link, "_blank")}
@@ -70,9 +70,7 @@ const ProjectCard = ({ name, description, tags, image, source_code_link, isDark 
 
 const Works = () => {
   const { isDark } = useTheme();
-  const labelColor   = isDark ? "text-[#aaa6c3]" : "text-[#8a7a6a]";
-  const headingColor = isDark ? "text-white" : "text-[#1a1008]";
-  const bodyColor    = isDark ? "text-[#aaa6c3]" : "text-[#5a4a3a]";
+  const labelColor = isDark ? "text-[#aaa6c3]" : "text-[#8a7a6a]";
 
   return (
     <div className="w-full max-w-7xl mx-auto py-4 px-6 sm:px-16">
@@ -89,10 +87,11 @@ const Works = () => {
       </motion.p>
 
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
         {projects.map((project, index) => (
           <motion.div
             key={`project-${index}`}
+            className="h-full"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1 }}

@@ -28,11 +28,36 @@ const Navbar = () => {
   const { isDark, setIsDark } = useTheme();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observers = [];
+
+    navLinks.forEach((nav) => {
+      const span = document.getElementById(nav.id);
+      if (!span) return;
+      // The span is inside the <section>; observe the section itself
+      const section = span.closest("section") || span.parentElement;
+      if (!section) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActive(nav.title);
+        },
+        {
+          // Fire when section crosses the upper 20% of the viewport
+          rootMargin: "-10% 0px -70% 0px",
+          threshold: 0,
+        }
+      );
+      observer.observe(section);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((obs) => obs.disconnect());
   }, []);
 
   return (
@@ -58,7 +83,7 @@ const Navbar = () => {
             {navLinks.map((nav) => (
               <li
                 key={nav.id}
-                className={`${active === nav.title ? "text-white" : "text-secondary"} hover:text-white text-[18px] font-medium cursor-pointer transition-colors`}
+                className={`${active === nav.title ? (isDark ? "text-white" : "text-[#1a1008]") : "text-secondary"} ${isDark ? "hover:text-white" : "hover:text-[#1a1008]"} text-[18px] font-medium cursor-pointer transition-colors`}
                 onClick={() => setActive(nav.title)}
               >
                 <a href={`#${nav.id}`}>{nav.title}</a>
