@@ -103,7 +103,7 @@ const Hero = () => {
           Get In Touch
         </a>
         <a
-          href="https://drive.google.com/file/d/1jyOWVtLE8IDTHipgN2gybQ_StoTQUgi7/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1ynr4jo_T9x0Jv1qpU0tWbzxn1bjlpTXC/view?usp=drive_link"
           target="_blank"
           rel="noreferrer"
           className={`flex items-center gap-2 px-5 py-3 rounded-full text-[14px] font-medium transition-colors duration-200 border ${

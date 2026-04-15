@@ -105,7 +105,7 @@ const Navbar = () => {
         <div className='sm:hidden flex items-center gap-3'>
           <button
             onClick={() => setIsDark(!isDark)}
-            className='text-secondary hover:text-white transition-colors p-1'
+            className={`transition-colors p-1 ${isDark ? 'text-secondary hover:text-white' : 'text-[#3a2010] hover:text-[#1a1008]'}`}
             aria-label="Toggle theme"
           >
             {isDark ? <SunIcon /> : <MoonIcon />}
@@ -115,6 +115,7 @@ const Navbar = () => {
             src={toggle ? close : menu}
             alt='menu'
             className='w-[28px] h-[28px] object-contain cursor-pointer'
+            style={!isDark ? { filter: 'brightness(0) saturate(100%) invert(13%) sepia(20%) saturate(800%) hue-rotate(10deg) brightness(90%)' } : {}}
             onClick={() => setToggle(!toggle)}
           />
 
