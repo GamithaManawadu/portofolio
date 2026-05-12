@@ -60,7 +60,7 @@ const Hero = () => {
         className={`text-[12px] font-medium tracking-[0.2em] uppercase mb-6 ${metaColor}`}
         style={{ fontFamily: "'Poppins', sans-serif" }}
       >
-        ML Engineer &nbsp;·&nbsp; AI Researcher &nbsp;·&nbsp; Auckland, NZ &nbsp;·&nbsp; {time}
+        Software Engineer &nbsp;·&nbsp; ML Engineer &nbsp;·&nbsp; AI Researcher &nbsp;·&nbsp; Auckland, NZ &nbsp;·&nbsp; {time}
       </p>
 
       {/* Name */}
