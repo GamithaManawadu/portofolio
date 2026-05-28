@@ -175,7 +175,7 @@ import {
       company_name: "Visiro Global Solutions",
       icon: visiro,
       iconBg: "#E6DEDD",
-      date: "December 2021 - February 2025",
+      date: "December 2022 - February 2025",
       points: [
         "Led software development projects while contributing hands-on as a full-stack engineer, focusing on Saas based ERP system development and integration within Agile teams.",
         "Designed and developed ERP modules (HR, finance, inventory) using C#, ASP.NET MVC, Entity Framework, and SQL Server.",
